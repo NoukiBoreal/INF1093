@@ -1,0 +1,46 @@
+def binary_search(numbers, search_nb):
+    found = False
+    begin = 0
+    end = len(numbers) - 1
+
+    while begin <= end:
+        mid = (begin + end) // 2
+        if numbers[mid] == search_nb:
+            found = True
+            return mid
+        elif numbers[mid] < search_nb:
+            begin = mid + 1
+        else:
+            end = mid - 1
+    
+    return -1  # Indique que la valeur n'a pas été trouvée
+
+def position_max_value(numbers):
+    max_value = max(numbers)
+    return numbers.index(max_value)
+
+def position_min_value(numbers):
+    min_value = min(numbers)
+    return numbers.index(min_value)
+
+def is_sorted_ascending(numbers):
+    for i in range(len(numbers) - 1):
+        if numbers[i] > numbers[i + 1]:
+            return False
+    return True
+def binary_search_descending(numbers, search_nb):
+    found = False
+    begin = 0
+    end = len(numbers) - 1
+
+    while begin <= end:
+        mid = (begin + end) // 2
+        if numbers[mid] == search_nb:
+            found = True
+            return mid
+        elif numbers[mid] > search_nb:
+            begin = mid + 1
+        else:
+            end = mid - 1
+    
+    return -1  # Indique que la valeur n'a pas été trouvée
